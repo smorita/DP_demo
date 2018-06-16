@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Satoshi Morita">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/darkly/bootstrap.min.css" rel="stylesheet" integrity="sha384-J01jr7rrJqxij+hUE1E+8N35mlD7L/TMrAO7tOarwMP7AWJM3P/lGXOjt0KLNhtE" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/css/bootstrap-slider.min.css" integrity="sha256-WfuSLYdzGvlsFU6ImYYSE277WsjfyU30QeGuNIjeJEI=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Domany-Kinzel Automaton</title>
+  </head>
+
+  <body>
+    <canvas id="dk" width="400" height="800" style="background-color: #ffffff; position: fixed; top: 0px; left: 0px;"></canvas>
+    <canvas id="graph" width="50" height="800" style="background-color: #333333; position: fixed; top: 0px; right: 0px;"></canvas>
+    <div class="container">
+      <div class="fixed-bottom col-sm-8 col-md-6 py-4 px-4" style="background-color: rgba(20,20,20,0.75);">
+        <h1 class="mb-4">Domany-Kinzel Automaton</h1>
+        <div class="row mb-2">
+          <div class="col-8">
+            <input id="slider_p1" type="text" style="width: 100%;"/>
+          </div>
+          <div class="col-4">
+            p1 = <span id="prob1"></span>
+          </div>
+        </div>
+        <div class="row mb-4">
+          <div class="col-8">
+            <input id="slider_p2" type="text" style="width: 100%;"/>
+          </div>
+          <div class="col-4">
+            p2 = <span id="prob2"></span>
+          </div>
+        </div>
+        <div class="mb-2">
+          <div class="btn-group btn-group-sm btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-info active" checked>
+              <input type="radio" name="init" id="model_free" autocomplete="off"> Free
+            </label>
+            <label class="btn btn-info" checked>
+              <input type="radio" name="init" id="model_bond" autocomplete="off"> Bond
+            </label>
+            <label class="btn btn-info">
+              <input type="radio" name="init" id="model_site" autocomplete="off"> Site
+            </label>
+            <label class="btn btn-info">
+              <input type="radio" name="init" id="model_compact" autocomplete="off"> Compact
+            </label>
+            <label class="btn btn-info">
+              <input type="radio" name="init" id="model_w18" autocomplete="off"> Wolfram 18
+            </label>
+          </div>
+        </div>
+        <div class="mb-2">
+          <div class="btn-group btn-group-sm btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-info active" checked>
+              <input type="radio" name="init" id="init_random" autocomplete="off"> Random
+            </label>
+            <label class="btn btn-info">
+              <input type="radio" name="init" id="init_single" autocomplete="off"> Single
+            </label>
+            <label class="btn btn-info">
+              <input type="radio" name="init" id="init_full" autocomplete="off"> Full
+            </label>
+          </div>
+          <button class="btn btn-sm btn-primary ml-2" type="button" id="clear">Clear</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/bootstrap-slider.js" integrity="sha256-CMbY8O/nsUqZQgyh7wMVktFXm31lLdWlCkl86V2eSCg=" crossorigin="anonymous"></script>
+    <script src="dk.js"></script>
+    <script src="dk_full.js"></script>
+  </body>
+</html>
